@@ -1,0 +1,80 @@
+@use '../utils/utils' as *;
+
+// ==========================================
+// CARD BLOCK
+// ==========================================
+
+.card {
+  background-color: $color-white;
+  border-radius: $border-radius-lg;
+  overflow: hidden;
+  box-shadow: $shadow-md;
+  transition: all $transition-base;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  
+  &:hover,
+  &:focus-within {
+    transform: translateY(-8px);
+    box-shadow: $shadow-xl;
+  }
+  
+  &:focus-within {
+    outline: 3px solid $color-primary-light;
+    outline-offset: 4px;
+  }
+  
+  // Image wrapper
+  &__image-wrapper {
+    position: relative;
+    width: 100%;
+    height: 240px;
+    overflow: hidden;
+    background-color: $color-gray-100;
+  }
+  
+  &__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform $transition-slow;
+    
+    .card:hover & {
+      transform: scale(1.1);
+    }
+  }
+  
+  // Content section
+  &__content {
+    padding: $spacing-lg;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  &__title {
+    font-family: $font-heading;
+    font-size: $font-size-xl;
+    font-weight: $font-weight-bold;
+    color: $color-dark;
+    margin-bottom: $spacing-sm;
+    line-height: $line-height-tight;
+  }
+  
+  &__description {
+    font-size: $font-size-base;
+    line-height: $line-height-relaxed;
+    color: $color-text-secondary;
+    flex: 1;
+  }
+  
+  // Variant: Featured card
+  &--featured {
+    border: 2px solid $color-primary;
+    
+    .card__title {
+      color: $color-primary;
+    }
+  }
+}

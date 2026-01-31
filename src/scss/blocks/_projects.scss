@@ -1,0 +1,51 @@
+@use '../utils/utils' as *;
+
+// ==========================================
+// PROJECTS BLOCK
+// ==========================================
+
+.projects {
+  padding: $spacing-3xl 0;
+  background-color: $color-bg-primary;
+  
+  &__container {
+    @include container;
+  }
+  
+  &__heading {
+    text-align: center;
+    font-size: clamp(2rem, 4vw, 3rem);
+    margin-bottom: $spacing-2xl;
+    color: $color-dark;
+    position: relative;
+    
+    &::after {
+      content: '';
+      display: block;
+      width: 80px;
+      height: 4px;
+      background: linear-gradient(90deg, $color-primary 0%, $color-secondary 100%);
+      margin: $spacing-md auto 0;
+      border-radius: $border-radius-full;
+    }
+  }
+  
+  &__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: $spacing-xl;
+    margin-bottom: $spacing-2xl;
+    
+    @include respond-to(sm) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    
+    @include respond-to(lg) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  
+  &__action {
+    @include flex-center;
+  }
+}

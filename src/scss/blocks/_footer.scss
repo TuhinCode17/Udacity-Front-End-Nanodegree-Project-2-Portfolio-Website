@@ -1,0 +1,27 @@
+@use '../utils/utils' as *;
+
+// ==========================================
+// FOOTER BLOCK
+// ==========================================
+
+.footer {
+  background-color: $color-dark;
+  color: $color-white;
+  padding: $spacing-xl 0;
+  
+  &__container {
+    @include container;
+    @include flex-center;
+    text-align: center;
+  }
+  
+  &__copyright {
+    font-size: $font-size-sm;
+    color: $color-gray-300;
+    margin: 0;
+    
+    @include respond-to(md) {
+      font-size: $font-size-base;
+    }
+  }
+}

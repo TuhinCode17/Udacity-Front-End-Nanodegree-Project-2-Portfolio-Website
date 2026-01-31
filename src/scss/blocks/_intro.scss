@@ -1,0 +1,141 @@
+@use '../utils/utils' as *;
+
+// ==========================================
+// INTRO BLOCK
+// ==========================================
+
+.intro {
+  min-height: 100vh;
+  padding-top: calc(#{$header-height-mobile} + #{$spacing-2xl});
+  padding-bottom: $spacing-3xl;
+  background: linear-gradient(135deg, 
+    rgba($color-primary, 0.05) 0%, 
+    rgba($color-secondary, 0.05) 100%
+  );
+  position: relative;
+  overflow: hidden;
+  
+  @include respond-to(md) {
+    padding-top: calc(#{$header-height-desktop} + #{$spacing-3xl});
+  }
+  
+  // Decorative background elements
+  &::before {
+    content: '';
+    position: absolute;
+    top: -10%;
+    right: -10%;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba($color-primary, 0.1) 0%, transparent 70%);
+    border-radius: 50%;
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -10%;
+    left: -10%;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba($color-secondary, 0.1) 0%, transparent 70%);
+    border-radius: 50%;
+    animation: float 8s ease-in-out infinite;
+    animation-delay: 1s;
+  }
+  
+  &__container {
+    @include container;
+    @include flex-column;
+    gap: $spacing-xl;
+    position: relative;
+    z-index: 1;
+    
+    @include respond-to(md) {
+      flex-direction: row-reverse;
+      align-items: center;
+      gap: $spacing-3xl;
+    }
+  }
+  
+  // Image wrapper
+  &__image-wrapper {
+    @include flex-center;
+    @include slide-in-left($transition-slow, 0.2s);
+    
+    @include respond-to(md) {
+      flex: 0 0 40%;
+    }
+  }
+  
+  &__image {
+    width: 280px;
+    height: 280px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 6px solid $color-white;
+    box-shadow: $shadow-xl;
+    transition: transform $transition-slow;
+    
+    @include respond-to(md) {
+      width: 380px;
+      height: 380px;
+    }
+    
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+  
+  // Content section
+  &__content {
+    @include flex-column;
+    gap: $spacing-lg;
+    
+    @include respond-to(md) {
+      flex: 1;
+    }
+  }
+  
+  &__heading {
+    @include slide-up($transition-slow, 0.4s);
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    margin-bottom: $spacing-sm;
+    background: linear-gradient(135deg, $color-dark 0%, $color-primary 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  &__description {
+    @include slide-up($transition-slow, 0.6s);
+    font-size: $font-size-lg;
+    line-height: $line-height-relaxed;
+    color: $color-text-secondary;
+    max-width: 600px;
+    
+    @include respond-to(md) {
+      font-size: $font-size-xl;
+    }
+  }
+  
+  // Actions (buttons)
+  &__actions {
+    @include slide-up($transition-slow, 0.8s);
+    display: flex;
+    flex-wrap: wrap;
+    gap: $spacing-md;
+    margin-top: $spacing-md;
+  }
+}
+
+// Respect reduced motion preference
+@media (prefers-reduced-motion: reduce) {
+  .intro {
+    &::before,
+    &::after {
+      animation: none;
+    }
+  }
+}
