@@ -1,0 +1,147 @@
+// ==========================================
+// COLORS
+// ==========================================
+
+// Primary palette - Deep teal and warm coral
+$color-primary: #0d7377;
+$color-primary-light: #14a8ae;
+$color-primary-dark: #084b4d;
+
+$color-secondary: #ff6b6b;
+$color-secondary-light: #ff8787;
+$color-secondary-dark: #ee5a52;
+
+// Neutral colors
+$color-dark: #1a1a2e;
+$color-gray-900: #2d2d44;
+$color-gray-700: #4a4a68;
+$color-gray-500: #8e8ea9;
+$color-gray-300: #d1d1e0;
+$color-gray-100: #f5f5fa;
+$color-white: #ffffff;
+
+// Semantic colors
+$color-success: #32d296;
+$color-warning: #ffa94d;
+$color-error: #ff6b6b;
+
+// Background colors
+$color-bg-primary: $color-white;
+$color-bg-secondary: $color-gray-100;
+$color-bg-dark: $color-dark;
+
+// Text colors
+$color-text-primary: $color-dark;
+$color-text-secondary: $color-gray-700;
+$color-text-light: $color-gray-500;
+$color-text-inverse: $color-white;
+
+// ==========================================
+// TYPOGRAPHY
+// ==========================================
+
+// Font families
+$font-primary: 'Outfit', 'Segoe UI', system-ui, -apple-system, sans-serif;
+$font-heading: 'Fraunces', 'Georgia', serif;
+$font-mono: 'JetBrains Mono', 'Courier New', monospace;
+
+// Font sizes
+$font-size-xs: 0.75rem;      // 12px
+$font-size-sm: 0.875rem;     // 14px
+$font-size-base: 1rem;       // 16px
+$font-size-md: 1.125rem;     // 18px
+$font-size-lg: 1.25rem;      // 20px
+$font-size-xl: 1.5rem;       // 24px
+$font-size-2xl: 2rem;        // 32px
+$font-size-3xl: 2.5rem;      // 40px
+$font-size-4xl: 3rem;        // 48px
+$font-size-5xl: 3.75rem;     // 60px
+
+// Font weights
+$font-weight-light: 300;
+$font-weight-regular: 400;
+$font-weight-medium: 500;
+$font-weight-semibold: 600;
+$font-weight-bold: 700;
+$font-weight-black: 900;
+
+// Line heights
+$line-height-tight: 1.2;
+$line-height-base: 1.6;
+$line-height-relaxed: 1.8;
+
+// ==========================================
+// SPACING
+// ==========================================
+
+$spacing-xs: 0.5rem;     // 8px
+$spacing-sm: 1rem;       // 16px
+$spacing-md: 1.5rem;     // 24px
+$spacing-lg: 2rem;       // 32px
+$spacing-xl: 3rem;       // 48px
+$spacing-2xl: 4rem;      // 64px
+$spacing-3xl: 6rem;      // 96px
+$spacing-4xl: 8rem;      // 128px
+
+// ==========================================
+// LAYOUT
+// ==========================================
+
+$container-max-width: 1200px;
+$container-padding: $spacing-md;
+
+// Breakpoints
+$breakpoint-xs: 480px;
+$breakpoint-sm: 640px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 1024px;
+$breakpoint-xl: 1280px;
+
+// Header
+$header-height-desktop: 80px;
+$header-height-mobile: 64px;
+$header-height-scrolled: 64px;
+
+// ==========================================
+// BORDERS & SHADOWS
+// ==========================================
+
+$border-radius-sm: 4px;
+$border-radius-md: 8px;
+$border-radius-lg: 12px;
+$border-radius-xl: 16px;
+$border-radius-full: 9999px;
+
+$border-width: 1px;
+$border-width-medium: 2px;
+$border-width-thick: 3px;
+
+// Shadows
+$shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+$shadow-md: 0 4px 6px rgba(0, 0, 0, 0.07);
+$shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+$shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.15);
+$shadow-2xl: 0 25px 50px rgba(0, 0, 0, 0.25);
+
+// ==========================================
+// TRANSITIONS
+// ==========================================
+
+$transition-fast: 150ms ease-in-out;
+$transition-base: 250ms ease-in-out;
+$transition-slow: 400ms ease-in-out;
+
+$easing-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+$easing-bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+// ==========================================
+// Z-INDEX
+// ==========================================
+
+$z-index-dropdown: 100;
+$z-index-sticky: 200;
+$z-index-fixed: 300;
+$z-index-modal-backdrop: 400;
+$z-index-modal: 500;
+$z-index-popover: 600;
+$z-index-tooltip: 700;
