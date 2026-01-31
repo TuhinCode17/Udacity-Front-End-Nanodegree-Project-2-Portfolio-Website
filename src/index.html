@@ -1,1 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--
+      Document metadata:
+      - UTF-8 for proper character encoding
+      - Responsive viewport for mobile-first design
+      - Description used by search engines and screen readers
+    -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Tuhin Subhra's Web Development Portfolio - Frontend Developer from Kolkata">
 
+    <!-- Page title shown in browser tab -->
+    <title>Tuhin Subhra | Web Developer Portfolio</title>
+
+    <!-- Main compiled stylesheet -->
+    <link rel="stylesheet" href="../dist/main.css">
+</head>
+<body>
+
+    <!--
+      HEADER
+      - Fixed navigation bar
+      - Contains site branding and primary navigation
+      - Uses semantic <header> and <nav> elements for accessibility
+    -->
+    <header class="header" id="header">
+        <div class="header__container">
+
+            <!--
+              Logo / site identity
+              - Anchor links back to top of page
+              - aria-label provides a clear purpose for screen readers
+            -->
+            <a href="#home" class="header__logo" aria-label="Home">
+                <span class="header__logo-text">Tuhin Subhra</span>
+            </a>
+
+            <!--
+              Mobile navigation toggle (hamburger button)
+              - aria-expanded is updated via JavaScript
+              - Button element ensures keyboard accessibility
+            -->
+            <button
+                class="header__burger"
+                id="burger-menu"
+                aria-label="Toggle navigation menu"
+                aria-expanded="false">
+                <span class="header__burger-line"></span>
+                <span class="header__burger-line"></span>
+                <span class="header__burger-line"></span>
+            </button>
+
+            <!--
+              Primary navigation
+              - aria-label helps assistive technologies identify navigation purpose
+              - Visibility is controlled via CSS and JavaScript on mobile
+            -->
+            <nav class="header__nav" id="nav-menu" aria-label="Main navigation">
+                <ul class="header__nav-list">
+                    <li class="header__nav-item">
+                        <a href="#skills" class="header__nav-link">Skills</a>
+                    </li>
+                    <li class="header__nav-item">
+                        <a href="#projects" class="header__nav-link">Projects</a>
+                    </li>
+                    <li class="header__nav-item">
+                        <a
+                          href="resume.pdf"
+                          class="header__nav-link"
+                          target="_blank"
+                          rel="noopener noreferrer">
+                          Resume
+                        </a>
+                    </li>
+                    <li class="header__nav-item">
+                        <a href="#contact" class="header__nav-link">Contact</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!--
+      MAIN CONTENT
+      - Wrapped in <main> for semantic structure
+      - Each section represents a logical content block
+    -->
+    <main class="main">
+
+        <!--
+          INTRO / HERO SECTION
+          - First visible section
+          - Introduces the developer and primary actions
+        -->
+        <section class="intro" id="home">
+            <div class="intro__container">
+
+                <!-- Profile image -->
+                <div class="intro__image-wrapper">
+                    <img
+                        src="img/profile-photo.jpg"
+                        alt="Professional headshot of Tuhin Subhra, frontend developer from Kolkata"
+                        class="intro__image">
+                </div>
+
+                <!-- Intro text and calls to action -->
+                <div class="intro__content">
+                    <h1 class="intro__heading">Tuhin Subhra's Portfolio</h1>
+
+                    <p class="intro__description">
+                        Frontend developer passionate about building accessible,
+                        fast, and beautiful web experiences.
+                        Specializing in modern JavaScript, responsive design,
+                        and inclusive user interfaces.
+                    </p>
+
+                    <!-- Primary user actions -->
+                    <div class="intro__actions">
+                        <a href="#projects" class="button button--primary">View Projects</a>
+                        <a href="#contact" class="button button--secondary">Contact Me</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--
+          SKILLS SECTION
+          - Simple unordered list for semantic clarity
+          - Styled visually using CSS, not markup
+        -->
+        <section class="skills" id="skills">
+            <div class="skills__container">
+                <h2 class="skills__heading">Technical Skills</h2>
+                <ul class="skills__list">
+                    <li class="skills__item">HTML5 & CSS3</li>
+                    <li class="skills__item">JavaScript (ES6+)</li>
+                    <li class="skills__item">SCSS / BEM</li>
+                    <li class="skills__item">Vue.js</li>
+                    <li class="skills__item">Responsive Design</li>
+                    <li class="skills__item">Accessibility (WCAG)</li>
+                    <li class="skills__item">Git & GitHub</li>
+                    <li class="skills__item">Shopify Liquid</li>
+                </ul>
+            </div>
+        </section>
+
+        <!--
+          PROJECTS SECTION
+          - Uses <article> for each project card
+          - Grid layout handled entirely in CSS
+        -->
+        <section class="projects" id="projects">
+            <div class="projects__container">
+                <h2 class="projects__heading">Latest Projects</h2>
+
+                <div class="projects__grid">
+
+                    <!-- Individual project card -->
+                    <article class="card">
+                        <div class="card__image-wrapper">
+                            <img
+                              src="img/project-1.jpg"
+                              alt="E-commerce platform dashboard screenshot"
+                              class="card__image">
+                        </div>
+                        <div class="card__content">
+                            <h3 class="card__title">E-Commerce Platform</h3>
+                            <p class="card__description">
+                                Responsive online store with real-time inventory
+                                and secure checkout, built with React & Node.js.
+                            </p>
+                        </div>
+                    </article>
+
+                    <article class="card">
+                        <div class="card__image-wrapper">
+                            <img
+                              src="img/project-2.jpg"
+                              alt="Weather app interface screenshot"
+                              class="card__image">
+                        </div>
+                        <div class="card__content">
+                            <h3 class="card__title">Weather Forecast App</h3>
+                            <p class="card__description">
+                                Geolocation-based weather app with charts and
+                                7-day forecast, using open APIs.
+                            </p>
+                        </div>
+                    </article>
+
+                    <article class="card">
+                        <div class="card__image-wrapper">
+                            <img
+                              src="img/project-3.jpg"
+                              alt="Task management dashboard screenshot"
+                              class="card__image">
+                        </div>
+                        <div class="card__content">
+                            <h3 class="card__title">Task Dashboard</h3>
+                            <p class="card__description">
+                                Kanban-style task manager with drag-and-drop and
+                                real-time collaboration features.
+                            </p>
+                        </div>
+                    </article>
+                </div>
+
+                <!-- Secondary navigation -->
+                <div class="projects__action">
+                    <a href="projects.html" class="button button--outline">More Projects</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!--
+      FOOTER / CONTACT
+      - Contains contact form and copyright
+      - aria-label on form improves screen reader clarity
+    -->
+    <footer class="footer" id="contact">
+        <div class="footer__container">
+            <h2 class="footer__heading">Get in Touch</h2>
+
+            <form class="footer__form" aria-label="Contact form">
+                <input type="text" name="name" placeholder="Name" required aria-label="Your name">
+                <input type="email" name="email" placeholder="Email" required aria-label="Your email">
+                <textarea name="message" placeholder="Message" required aria-label="Your message"></textarea>
+                <button type="submit" class="button button--primary">Send Message</button>
+            </form>
+
+            <p class="footer__copyright">
+              &copy; Tuhin Subhra 2025. All rights reserved.
+            </p>
+        </div>
+    </footer>
+
+    <!-- Main JavaScript file -->
+    <script src="js/main.js"></script>
+</body>
+</html>
