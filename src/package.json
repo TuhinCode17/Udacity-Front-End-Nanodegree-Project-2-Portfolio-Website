@@ -1,1 +1,24 @@
-
+{
+  "name": "tuhin-portfolio",
+  "version": "1.0.0",
+  "description": "Tuhin's Professional Web Development Portfolio",
+  "main": "src/index.html",
+  "scripts": {
+    "sass": "sass src/scss/main.scss dist/main.css",
+    "sass:watch": "sass --watch src/scss/main.scss:dist/main.css",
+    "sass:build": "sass src/scss/main.scss dist/main.css --style=compressed",
+    "start": "npm run sass:watch"
+  },
+  "keywords": [
+    "portfolio",
+    "web-development",
+    "frontend",
+    "scss",
+    "bem"
+  ],
+  "author": "Tuhin",
+  "license": "MIT",
+  "devDependencies": {
+    "sass": "^1.69.5"
+  }
+}
