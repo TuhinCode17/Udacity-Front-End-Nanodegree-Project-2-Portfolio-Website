@@ -1,0 +1,133 @@
+@use '../utils/utils' as *;
+
+// ==========================================
+// TYPOGRAPHY BASE STYLES
+// ==========================================
+
+// Import Google Fonts
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;0,9..144,700;0,9..144,900;1,9..144,400&family=Outfit:wght@300;400;500;600;700;800&display=swap');
+
+body {
+  font-family: $font-primary;
+  font-size: $font-size-base;
+  font-weight: $font-weight-regular;
+  line-height: $line-height-base;
+  color: $color-text-primary;
+  background-color: $color-bg-primary;
+}
+
+// Headings
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $font-heading;
+  font-weight: $font-weight-bold;
+  line-height: $line-height-tight;
+  color: $color-text-primary;
+  margin-bottom: $spacing-md;
+}
+
+h1 {
+  font-size: $font-size-3xl;
+  
+  @include respond-to(md) {
+    font-size: $font-size-4xl;
+  }
+  
+  @include respond-to(lg) {
+    font-size: $font-size-5xl;
+  }
+}
+
+h2 {
+  font-size: $font-size-2xl;
+  
+  @include respond-to(md) {
+    font-size: $font-size-3xl;
+  }
+}
+
+h3 {
+  font-size: $font-size-xl;
+  
+  @include respond-to(md) {
+    font-size: $font-size-2xl;
+  }
+}
+
+h4 {
+  font-size: $font-size-lg;
+  
+  @include respond-to(md) {
+    font-size: $font-size-xl;
+  }
+}
+
+h5 {
+  font-size: $font-size-md;
+  
+  @include respond-to(md) {
+    font-size: $font-size-lg;
+  }
+}
+
+h6 {
+  font-size: $font-size-base;
+  
+  @include respond-to(md) {
+    font-size: $font-size-md;
+  }
+}
+
+// Paragraphs
+p {
+  margin-bottom: $spacing-md;
+  color: $color-text-secondary;
+  
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+// Links
+a {
+  color: $color-primary;
+  transition: color $transition-base;
+  
+  &:hover {
+    color: $color-primary-dark;
+  }
+  
+  &:focus-visible {
+    outline: 3px solid $color-primary-light;
+    outline-offset: 2px;
+  }
+}
+
+// Strong and emphasis
+strong,
+b {
+  font-weight: $font-weight-bold;
+}
+
+em,
+i {
+  font-style: italic;
+}
+
+// Small text
+small {
+  font-size: $font-size-sm;
+}
+
+// Code
+code {
+  font-family: $font-mono;
+  font-size: 0.9em;
+  padding: 0.125rem 0.25rem;
+  background-color: $color-gray-100;
+  border-radius: $border-radius-sm;
+}
