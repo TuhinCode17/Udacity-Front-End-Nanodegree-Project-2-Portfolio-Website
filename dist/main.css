@@ -13,7 +13,7 @@ html {
 }
 
 /* ==========================================
-   RESET & BASE STYLES
+   Reset & base styles
 ========================================== */
 @import url("https://fonts.googleapis.com/css2?family=Fraunces:wght@700&family=Outfit:wght@400;500;600;700&display=swap");
 
@@ -66,8 +66,12 @@ img {
   }
 }
 
-/* Fixed header with backdrop blur for modern UI
-   Kept lightweight to avoid scroll jank  */
+/* NOTE:
+   Header heights here must stay in sync with `scroll-padding-top` above.
+   If you change one, update the other to keep anchor links aligned. */
+
+/* Fixed header with a subtle backdrop blur
+   Kept intentionally lightweight to avoid scroll jank */
 .header {
   position: fixed;
   top: 0;
@@ -93,15 +97,26 @@ img {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  transition: height 0.3s ease; /* Smooth height transition */
 }
 
 @media (min-width: 768px) {
   .header__container {
     height: 80px;
   }
+  
+  /* Shrink header height on scroll (desktop only) */
+  .header--scrolled .header__container {
+    height: 60px; /* Reduced from 80px to 60px on scroll */
+  }
 }
 
-/* Logo */
+/* Shrink logo size on scroll for visual effect */
+.header--scrolled .header__logo-text {
+  font-size: 1.4rem; /* Reduced from 1.6rem */
+}
+
+
 .header__logo {
   text-decoration: none;
   transition: transform 0.2s ease;
@@ -116,6 +131,7 @@ img {
   font-size: 1.6rem;
   font-weight: 700;
   color: #0d7377;
+  transition: font-size 0.3s ease; /* Smooth font size transition */
 }
 
 /* Burger menu button (mobile only) */
@@ -222,17 +238,21 @@ img {
   color: #0d7377;
 }
 
-/* Prevent body scroll when mobile menu is open */
+/* Prevent background scroll when the mobile menu is open
+   (avoids the page moving behind the overlay) */
 body.menu-open {
   overflow: hidden;
 }
 
 /* ==========================================
-   INTRO / HERO SECTION
+   Intro / Hero Section
 ========================================== */
+
+/* Top padding accounts for the fixed header.
+   If header height changes significantly, revisit this value. */
 .intro {
   min-height: 100vh;
-  padding: 120px 1.5rem 6rem;
+  padding: 120px 1.5rem 3.75rem; /* Bottom padding: 60px max gap requirement */
   background: linear-gradient(135deg, rgba(13, 115, 119, 0.03) 0%, rgba(255, 107, 107, 0.03) 100%);
   display: flex;
   align-items: center;
@@ -260,8 +280,9 @@ body.menu-open {
   text-align: center;
   animation: fadeIn 0.8s ease-out;
 }
+
 /* Subtle entrance animations
-  Kept short and eased to avoid distracting the user */
+   Kept intentionally short so they enhance, not distract */ 
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -327,7 +348,7 @@ body.menu-open {
 }
 
 /* ==========================================
-   BUTTONS
+   Buttons
 ========================================== */
 .button {
   display: inline-flex;
@@ -386,10 +407,10 @@ body.menu-open {
 }
 
 /* ==========================================
-   SKILLS SECTION
+   Skills Section
 ========================================== */
 .skills {
-  padding: 6rem 1.5rem;
+  padding: 3.75rem 1.5rem; /* 60px max gap requirement */
   background: white;
 }
 
@@ -442,10 +463,10 @@ body.menu-open {
 }
 
 /* ==========================================
-   PROJECTS SECTION
+   Projects Section
 ========================================== */
 .projects {
-  padding: 6rem 1.5rem;
+  padding: 3.75rem 1.5rem; /* 60px max gap requirement */
   background: linear-gradient(135deg, rgba(13, 115, 119, 0.03) 0%, rgba(255, 107, 107, 0.03) 100%);
 }
 
@@ -555,12 +576,12 @@ body.menu-open {
 }
 
 /* ==========================================
-   FOOTER / CONTACT SECTION
+   Footer / Contact Section
 ========================================== */
 .footer {
   background: #1a1a2e;
   color: white;
-  padding: 5rem 1.5rem 3rem;
+  padding: 3.75rem 1.5rem 3rem; /* Top padding: 60px max gap requirement */
   text-align: center;
 }
 
